@@ -6,8 +6,9 @@ import { theme } from '~/theme';
 import './globals.css';
 
 export const metadata = {
-  title: 'AstroMVP Boilerplate',
-  description: 'Astro Boilerplate is a simple boilerplate used for all AstroMVP projects.',
+  title: 'OT Assessment',
+  description:
+    'Occupational therapy evaluation and documentation system for worker compensation cases with integrated assessment tools and normative data',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

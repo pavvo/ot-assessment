@@ -1,6 +1,6 @@
-# AstroMVP Boilerplate
+# OT Aassessment
 
-Our standard boilerplate for client projects. Uses our preferred stack and tooling to help us ship faster.
+A comprehensive occupational therapy evaluation and documentation system specializing in worker compensation cases. Features include structured patient assessment forms, ROM measurements, functional testing documentation, QuickDASH outcome measures, and job demands analysis tools. The system helps occupational therapists track patient progress, document physical capabilities, and generate detailed evaluation reports with integrated normative data for grip strength and pinch measurements.
 
 ## Prerequisites
 

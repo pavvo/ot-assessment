@@ -1,7 +1,7 @@
 {
-  "name": "astro-boilerplate",
+  "name": "ot-assessment",
   "version": "1.0.0",
-  "description": "Astro Boilerplate is a simple boilerplate used for all AstroMVP projects.",
+  "description": "Occupational therapy evaluation and documentation system for worker compensation cases with integrated assessment tools and normative data",
   "author": "AstroMVP Agency LLC",
   "scripts": {
     "build": "next build",

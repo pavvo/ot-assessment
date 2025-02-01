@@ -48,7 +48,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             <Burger opened={opened} onClick={toggle} hiddenFrom="lg" size="sm" />
             <Anchor underline="never" c="var(--mantine-color-text)" component={Link} href="/">
               <Title mr={16} order={4} fw={600} style={{ cursor: 'pointer' }}>
-                AstroMVP Boilerplate
+                OT Assessment
               </Title>
             </Anchor>
             <Flex gap="lg" visibleFrom="lg">
