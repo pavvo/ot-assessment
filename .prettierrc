@@ -1,0 +1,31 @@
+{
+  "semi": true,
+  "tabWidth": 2,
+  "printWidth": 100,
+  "singleQuote": true,
+  "trailingComma": "es5",
+  "bracketSpacing": true,
+  "arrowParens": "avoid",
+  "plugins": ["prettier-plugin-packagejson", "@trivago/prettier-plugin-sort-imports"],
+  "importOrder": [
+    "^react(.*)$",
+    "^react-dom(.*)$",
+    "^react-hook-form/(.*)$",
+    "^zod(.*)$",
+    "^zustand(.*)$",
+    "^next-safe-action/(.*)$",
+    "^@supabase/(.*)$",
+    "^@mantine/core(.*)$",
+    "^@mantine/hooks(.*)$",
+    "^@mantine/form(.*)$",
+    "^@tabler/(.*)$",
+    "^~/app(.*)$",
+    "^~/lib(.*)$",
+    "^~/components(.*)$",
+    "^~/hooks(.*)$",
+    "^~/(.*)$",
+    "^[./]"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
+}

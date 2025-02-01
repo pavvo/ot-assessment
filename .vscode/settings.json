@@ -1,0 +1,8 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "workbench.editor.customLabels.patterns": {
+    "**/**.ts": "${dirname}/${filename}",
+    "**/**.tsx": "${dirname}/${filename}"
+  }
+}
