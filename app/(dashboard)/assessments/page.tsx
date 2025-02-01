@@ -1,6 +1,6 @@
 import { Box, Center, Text } from '@mantine/core';
 
-export default function Page() {
+export default function Assessments() {
   return (
     <Box
       style={{
@@ -12,7 +12,7 @@ export default function Page() {
       }}
     >
       <Center h="100%">
-        <Text>This is a placeholder for the dashboard.</Text>
+        <Text>This is a placeholder for the assessments page.</Text>
       </Center>
     </Box>
   );

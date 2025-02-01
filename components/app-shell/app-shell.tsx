@@ -1,6 +1,9 @@
 'use client';
 
+import { useEffect } from 'react';
+
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 import {
   Anchor,
@@ -19,10 +22,24 @@ import { UserMenu } from './user-menu';
 
 const THEME_HOT_KEY = 'mod+J';
 
+type Link = {
+  href: string;
+  label: string;
+};
+
+const LINKS: Array<Link> = [
+  { href: '/', label: 'Home' },
+  { href: '/patients', label: 'Patients' },
+  { href: '/assessments', label: 'Assessments' },
+  { href: '/reports', label: 'Reports' },
+];
+
 export function AppShell({ children }: { children: React.ReactNode }) {
-  const [opened, { toggle }] = useDisclosure();
+  const [opened, { toggle, close }] = useDisclosure();
 
   const { setColorScheme, colorScheme } = useMantineColorScheme();
+
+  const pathname = usePathname();
 
   const changeTheme = () => {
     setColorScheme(colorScheme === 'light' ? 'dark' : 'light');
@@ -30,6 +47,13 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 
   // Listen for theme change hotkey
   useHotkeys([[THEME_HOT_KEY, changeTheme]]);
+
+  // Close mobile navigation on route change
+  useEffect(() => {
+    close();
+  }, [pathname]);
+
+  const isLinkActive = (href: string) => pathname === href;
 
   return (
     <MantineAppShell
@@ -52,7 +76,22 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               </Title>
             </Anchor>
             <Flex gap="lg" visibleFrom="lg">
-              {/* Navigation links goes here */}
+              {LINKS.map(link => (
+                <Anchor
+                  key={link.href}
+                  underline="never"
+                  c={
+                    isLinkActive(link.href)
+                      ? 'var(--mantine-color-dark-8)'
+                      : 'var(--mantine-color-dark-3)'
+                  }
+                  fw={isLinkActive(link.href) ? 500 : 400}
+                  component={Link}
+                  href={link.href}
+                >
+                  {link.label}
+                </Anchor>
+              ))}
             </Flex>
           </Group>
           <UserMenu />
@@ -61,7 +100,17 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       {/* Mobile navigation bar menu */}
       <MantineAppShell.Navbar>
         <Flex direction="column" p="md" gap="sm">
-          {/* Navigation links goes here */}
+          {LINKS.map(link => (
+            <Anchor
+              key={link.href}
+              underline="never"
+              c="var(--mantine-color-text)"
+              component={Link}
+              href={link.href}
+            >
+              {link.label}
+            </Anchor>
+          ))}
         </Flex>
       </MantineAppShell.Navbar>
       {/* Page content */}

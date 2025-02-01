@@ -10,6 +10,7 @@
   "importOrder": [
     "^react(.*)$",
     "^react-dom(.*)$",
+    "^next/(.*)$",
     "^react-hook-form/(.*)$",
     "^zod(.*)$",
     "^zustand(.*)$",
