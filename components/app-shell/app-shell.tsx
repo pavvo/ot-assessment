@@ -85,11 +85,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                 <Anchor
                   key={link.href}
                   underline="never"
-                  c={
-                    isLinkActive(link.href)
-                      ? 'var(--mantine-color-dark-8)'
-                      : 'var(--mantine-color-dark-3)'
-                  }
+                  c="var(--mantine-color-text)"
                   fw={isLinkActive(link.href) ? 500 : 400}
                   component={Link}
                   href={link.href}
