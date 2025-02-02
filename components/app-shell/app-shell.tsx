@@ -53,7 +53,12 @@ export function AppShell({ children }: { children: React.ReactNode }) {
     close();
   }, [pathname]);
 
-  const isLinkActive = (href: string) => pathname === href;
+  const isLinkActive = (href: string) => {
+    // Special case for home page
+    if (href === '/') return pathname === href;
+    // Check if pathname starts with href
+    return pathname.startsWith(href);
+  };
 
   return (
     <MantineAppShell
