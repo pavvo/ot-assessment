@@ -1,19 +1,27 @@
-import { Box, Center, Text } from '@mantine/core';
+import { Button, Card, Container, Group, Stack, Title } from '@mantine/core';
 
-export default function Patients() {
+import { IconPlus } from '@tabler/icons-react';
+
+import { createClient } from '~/lib/supabase/server-client';
+
+import PatientsTable from './components/patients-table';
+
+export default async function Patients() {
+  const supabase = await createClient();
+
+  const { data: patients } = await supabase.from('patients').select('*');
+
   return (
-    <Box
-      style={{
-        border: 1,
-        borderColor: 'var(--mantine-color-gray-5)',
-        borderStyle: 'dashed',
-        width: '100%',
-        height: '100%',
-      }}
-    >
-      <Center h="100%">
-        <Text>This is a placeholder for the patients page.</Text>
-      </Center>
-    </Box>
+    <Container size="lg" pt="lg">
+      <Card p="lg" withBorder>
+        <Stack gap="lg">
+          <Group justify="space-between">
+            <Title order={3}>Patients</Title>
+            <Button leftSection={<IconPlus size={16} />}>New Patient</Button>
+          </Group>
+          <PatientsTable patients={patients || []} />
+        </Stack>
+      </Card>
+    </Container>
   );
 }
