@@ -1,7 +1,7 @@
-import { ColorSchemeScript, MantineProvider, mantineHtmlProps } from '@mantine/core';
+import { ColorSchemeScript, mantineHtmlProps } from '@mantine/core';
 import '@mantine/core/styles.css';
 
-import { theme } from '~/theme';
+import AppProviders from '~/providers/app-providers';
 
 import './globals.css';
 
@@ -18,7 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ColorSchemeScript />
       </head>
       <body>
-        <MantineProvider theme={theme}>{children}</MantineProvider>
+        <AppProviders>{children}</AppProviders>
       </body>
     </html>
   );

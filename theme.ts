@@ -1,5 +1,3 @@
-'use client';
-
 import { type MantineThemeOverride, colorsTuple, virtualColor } from '@mantine/core';
 
 export const theme: MantineThemeOverride = {

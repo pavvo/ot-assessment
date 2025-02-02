@@ -34,6 +34,9 @@ importers:
       next:
         specifier: ^15.1.6
         version: 15.1.6(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      next-nprogress-bar:
+        specifier: ^2.4.4
+        version: 2.4.4
       next-safe-action:
         specifier: ^7.10.2
         version: 7.10.2(next@15.1.6(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(zod@3.24.1)
@@ -1766,6 +1769,12 @@ packages:
     engines: { node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1 }
     hasBin: true
 
+  next-nprogress-bar@2.4.4:
+    resolution:
+      {
+        integrity: sha512-SeOtJCh9T0+RCGH+fl1SxHUt5uU3wH3emhVBZiKCbTHbGYYBho3o2DkuwCjoI7IxV5uGjHBuSVJI2+v3pMC64A==,
+      }
+
   next-safe-action@7.10.2:
     resolution:
       {
@@ -1841,6 +1850,12 @@ packages:
         integrity: sha512-ppwTtiJZq0O/ai0z7yfudtBpWIoxM8yE6nHi1X47eFR2EWORqfbu6CnPlNsjeN683eT0qG6H/Pyf9fCcvjnnnQ==,
       }
     engines: { node: ^12.20.0 || ^14.13.1 || >=16.0.0 }
+
+  nprogress-v2@1.0.4:
+    resolution:
+      {
+        integrity: sha512-HPhTEgqsQMFXXuaftvu6bevqEXvcQ/hogvkAswlcNyS9eRGjvo7wZY1O4H3aZS4Uq8oWSO6sL3dOj6Oq/ZJN5A==,
+      }
 
   onetime@6.0.0:
     resolution:
@@ -3592,6 +3607,10 @@ snapshots:
 
   nanoid@3.3.8: {}
 
+  next-nprogress-bar@2.4.4:
+    dependencies:
+      nprogress-v2: 1.0.4
+
   next-safe-action@7.10.2(next@15.1.6(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(zod@3.24.1):
     dependencies:
       next: 15.1.6(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -3638,6 +3657,8 @@ snapshots:
   npm-run-path@5.3.0:
     dependencies:
       path-key: 4.0.0
+
+  nprogress-v2@1.0.4: {}
 
   onetime@6.0.0:
     dependencies:
