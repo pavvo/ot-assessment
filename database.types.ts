@@ -106,6 +106,70 @@ export interface Database {
         };
         Relationships: [];
       };
+      profiles: {
+        Row: {
+          address_line1: string | null;
+          address_line2: string | null;
+          city: string | null;
+          created_at: string | null;
+          fax: string | null;
+          first_name: string | null;
+          id: string;
+          last_name: string | null;
+          npi: string | null;
+          organization: string | null;
+          signature_details: string | null;
+          state: string | null;
+          updated_at: string | null;
+          username: string | null;
+          work_phone: string | null;
+          zip: string | null;
+        };
+        Insert: {
+          address_line1?: string | null;
+          address_line2?: string | null;
+          city?: string | null;
+          created_at?: string | null;
+          fax?: string | null;
+          first_name?: string | null;
+          id: string;
+          last_name?: string | null;
+          npi?: string | null;
+          organization?: string | null;
+          signature_details?: string | null;
+          state?: string | null;
+          updated_at?: string | null;
+          username?: string | null;
+          work_phone?: string | null;
+          zip?: string | null;
+        };
+        Update: {
+          address_line1?: string | null;
+          address_line2?: string | null;
+          city?: string | null;
+          created_at?: string | null;
+          fax?: string | null;
+          first_name?: string | null;
+          id?: string;
+          last_name?: string | null;
+          npi?: string | null;
+          organization?: string | null;
+          signature_details?: string | null;
+          state?: string | null;
+          updated_at?: string | null;
+          username?: string | null;
+          work_phone?: string | null;
+          zip?: string | null;
+        };
+        Relationships: [
+          {
+            foreignKeyName: 'profiles_id_fkey';
+            columns: ['id'];
+            referencedRelation: 'users';
+            referencedColumns: ['id'];
+          },
+        ];
+      };
       surgeries: {
         Row: {
           created_at: string | null;
@@ -145,7 +209,29 @@ export interface Database {
       [_ in never]: never;
     };
     Functions: {
-      [_ in never]: never;
+      change_password:
+        | {
+            Args: {
+              current_password: string;
+              new_password: string;
+            };
+            Returns: Json;
+          }
+        | {
+            Args: {
+              user_id: string;
+              current_password: string;
+              new_password: string;
+            };
+            Returns: Json;
+          };
+      change_user_password: {
+        Args: {
+          current_plain_password: string;
+          new_plain_password: string;
+        };
+        Returns: Json;
+      };
     };
     Enums: {
       [_ in never]: never;

@@ -1,5 +1,6 @@
 'use client';
 
+import { Notifications } from '@mantine/notifications';
 import { AppProgressBar as ProgressBar } from 'next-nprogress-bar';
 
 import { MantineProvider } from '@mantine/core';
@@ -14,7 +15,10 @@ export default function AppProviders({ children }: { children: React.ReactNode }
         color="var(--mantine-primary-color-filled)"
         options={{ showSpinner: false }}
       />
-      <MantineProvider theme={theme}>{children}</MantineProvider>
+      <MantineProvider theme={theme}>
+        <Notifications position="top-right" />
+        {children}
+      </MantineProvider>
     </>
   );
 }

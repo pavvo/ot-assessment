@@ -18,11 +18,15 @@ function getNameFromEmail(email?: string) {
 }
 
 export function UserInfo() {
-  const { user, isLoading } = useCurrentUser();
+  const { user, isLoading, profile } = useCurrentUser();
 
   if (!user && isLoading) return <UserInfoSkeleton />;
 
   const { email } = user ?? {};
+
+  const username = profile?.first_name
+    ? `${profile?.first_name} ${profile?.last_name}`
+    : getNameFromEmail(email);
 
   return (
     <MenuTarget>
@@ -30,7 +34,7 @@ export function UserInfo() {
         <Group gap={7}>
           <Stack visibleFrom="sm" align="end" ta="end" gap={2}>
             <Text size="sm" lh={1}>
-              {getNameFromEmail(email)}
+              {username}
             </Text>
             <Text size="xs" lh={1} c="dimmed">
               {email}

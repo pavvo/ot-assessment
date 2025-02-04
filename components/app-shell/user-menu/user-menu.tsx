@@ -1,6 +1,6 @@
 import { Menu, MenuDropdown, MenuItem, MenuLabel } from '@mantine/core';
 
-import { IconLogout } from '@tabler/icons-react';
+import { IconLogout, IconUser } from '@tabler/icons-react';
 
 import { useCurrentUser } from '~/hooks/use-current-user';
 
@@ -20,8 +20,12 @@ export function UserMenu() {
       >
         <UserInfo />
         <MenuDropdown>
-          <ThemeSelect />
           <MenuLabel>Account</MenuLabel>
+          <MenuItem component="a" href="/account" leftSection={<IconUser width={16} />}>
+            My Account
+          </MenuItem>
+          <ThemeSelect />
+          <MenuLabel>Misc</MenuLabel>
           <MenuItem onClick={signOut} leftSection={<IconLogout width={16} />}>
             Sign out
           </MenuItem>
