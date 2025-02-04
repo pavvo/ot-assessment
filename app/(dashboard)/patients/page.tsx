@@ -1,4 +1,6 @@
-import { Button, Card, Container, Group, Stack, Title } from '@mantine/core';
+import Link from 'next/link';
+
+import { Anchor, Button, Card, Container, Group, Stack, Title } from '@mantine/core';
 
 import { IconPlus } from '@tabler/icons-react';
 
@@ -17,7 +19,9 @@ export default async function Patients() {
         <Stack gap="lg">
           <Group justify="space-between">
             <Title order={3}>Patients</Title>
-            <Button leftSection={<IconPlus size={16} />}>New Patient</Button>
+            <Anchor component={Link} href="/patients/new">
+              <Button leftSection={<IconPlus size={16} />}>New Patient</Button>
+            </Anchor>
           </Group>
           <PatientsTable patients={patients || []} />
         </Stack>

@@ -1,3 +1,4 @@
+import '@mantine/dates/styles.css';
 import '@mantine/notifications/styles.css';
 
 import { ColorSchemeScript, mantineHtmlProps } from '@mantine/core';
