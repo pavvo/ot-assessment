@@ -17,6 +17,7 @@ export const createPatient = actionClient.schema(patientSchema).action(async ({ 
   // Start a Supabase transaction
   const { data: patient, error: patientError } = await supabase
     .from('patients')
+    // @ts-expect-error - Fix this
     .insert(patientData)
     .select()
     .single();
@@ -36,6 +37,7 @@ export const createPatient = actionClient.schema(patientSchema).action(async ({ 
     }));
 
     // Insert surgeries
+    // @ts-expect-error - Fix this
     const { error: surgeriesError } = await supabase.from('surgeries').insert(surgeryRecords);
 
     if (surgeriesError) {

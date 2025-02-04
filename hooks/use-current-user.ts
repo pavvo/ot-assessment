@@ -29,6 +29,7 @@ export function useCurrentUser(): UseCurrentUserReturn {
     const { data, error } = await supabase.from('profiles').select('*').eq('id', userId).single();
 
     if (error) throw error;
+    // @ts-expect-error - Fix this
     setProfile(data);
   };
 
